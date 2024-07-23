@@ -8,14 +8,16 @@ members = ["application", "domain", "infrastructure", "interfaces"]
 
 [workspace.dependencies]
 anyhow = "1.0.86"
-actix-web = "4"
 tokio = { version = "1.38.0", features = ["rt", "macros"] }
-serde = { version = "1.0", features = ["derive"] }
-time = { version = "0.3.11", features = ["serde"] }
-sqlx = { version = "0.7", features = ["mysql", "runtime-tokio-native-tls", "time", "bigdecimal"] }
-bigdecimal = { version = "0.4.5", features = ["serde"] }
-dotenv = "0.15.0"
 structopt = "0.3.26"
 serde_json = "1.0.81"
 derive_more = "0.99.17"
 serde_with = { version = "3.8.0", features = ["time_0_3"] }
+serde = { version = "1.0.144", features = ["derive"] }
+async-trait = "0.1.81"
+diesel = { version = "2.2.1", features = ["mysql", "r2d2"] }
+dotenv = "0.15.0"
+r2d2 = "0.8.10"
+actix-web = "4.8.0"
+log = "0.4.22"
+env_logger = "0.11.3"
