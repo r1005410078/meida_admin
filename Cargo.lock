@@ -893,9 +893,11 @@ dependencies = [
 name = "infrastructure"
 version = "0.1.0"
 dependencies = [
+ "actix-web",
  "async-trait",
  "diesel",
  "domain",
+ "log",
  "r2d2",
  "serde",
 ]
@@ -978,6 +980,11 @@ checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 [[package]]
 name = "meida_admin"
 version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "env_logger",
+ "presentation",
+]
 
 [[package]]
 name = "memchr"
@@ -1136,6 +1143,7 @@ dependencies = [
  "actix-web",
  "application",
  "diesel",
+ "domain",
  "env_logger",
  "infrastructure",
  "log",

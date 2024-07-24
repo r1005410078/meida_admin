@@ -9,3 +9,5 @@ r2d2 = { workspace = true }
 domain = { workspace = true }
 serde = { workspace = true }
 async-trait = { workspace = true }
+actix-web = { workspace = true }
+log = { workspace = true }

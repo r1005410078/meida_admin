@@ -13,3 +13,4 @@ serde_with = { workspace = true }
 serde = { workspace = true }
 env_logger = { workspace = true }
 log = { workspace = true }
+domain = { workspace = true }

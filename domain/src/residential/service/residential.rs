@@ -34,4 +34,8 @@ impl<T: ResidentialRepository> ResidentialService<T> {
     pub async fn get_residential_by_name(&self, name: &str) -> Option<Residential> {
         self.residential_repo.get_residential_by_name(name).await
     }
+
+    pub async fn get_all_residential(&self) -> Vec<Residential> {
+        self.residential_repo.get_all_residential().await
+    }
 }

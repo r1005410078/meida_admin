@@ -6,7 +6,7 @@ CREATE TABLE residential (
     city VARCHAR(100) NOT NULL DEFAULT '安庆市' COMMENT '默认安庆市', 
     state VARCHAR(100) NOT NULL DEFAULT '安徽省' COMMENT '默认安徽省',
     postal_code VARCHAR(20) NOT NULL DEFAULT '246000' COMMENT '邮政编码',
-    year_built YEAR NOT NULL COMMENT '建设年份，使用 YEAR 数据类型',
+    year_built SMALLINT NOT NULL COMMENT '建设年份，使用 YEAR 数据类型',
     community_type  VARCHAR(100) NOT NULL DEFAULT '住宅' COMMENT '住宅区类型，使用 ENUM 数据类型限定为特定值',
     description TEXT COMMENT '描述'
 );

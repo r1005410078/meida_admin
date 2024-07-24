@@ -36,4 +36,8 @@ impl ResidentialRepository for &MysqlResidentialRepository {
     async fn get_residential_by_name(&self, input_name: &str) -> Option<Residential> {
         ResidentialDao::find_by_name(self.pool.clone(), input_name)
     }
+
+    async fn get_all_residential(&self) -> Vec<Residential> {
+        ResidentialDao::find_all_residential(self.pool.clone())
+    }
 }

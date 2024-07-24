@@ -4,7 +4,7 @@ use domain::residential::{
     service::residential::ResidentialService,
 };
 
-struct SaveResidentialUseCase<T: ResidentialRepository> {
+pub struct SaveResidentialUseCase<T: ResidentialRepository> {
     residential_service: ResidentialService<T>,
 }
 

@@ -18,4 +18,8 @@ impl<T: ResidentialRepository> GetResidentialUseCase<T> {
     pub async fn get(&self, name: &str) -> Option<Residential> {
         self.residential_service.get_residential_by_name(name).await
     }
+
+    pub async fn get_list(&self) -> Vec<Residential> {
+        self.residential_service.get_all_residential().await
+    }
 }

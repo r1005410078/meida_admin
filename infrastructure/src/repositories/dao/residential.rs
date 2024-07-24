@@ -17,7 +17,7 @@ pub struct NewResidentialDao {
     city: String,
     state: String,
     postal_code: String,
-    year_built: String,
+    year_built: i16,
     community_type: String,
     description: Option<String>,
 }
@@ -50,12 +50,13 @@ impl NewResidentialDao {
 #[derive(Debug, Clone, Deserialize, AsChangeset)]
 #[diesel(table_name = residential)]
 pub struct UpdateResidentialDao {
+    pub id: i32,
     pub name: Option<String>,
     pub address: Option<String>,
     pub city: Option<String>,
     pub state: Option<String>,
     pub postal_code: Option<String>,
-    pub year_built: Option<String>,
+    pub year_built: Option<i16>,
     pub community_type: Option<String>,
     pub description: Option<String>,
 }
@@ -63,12 +64,13 @@ pub struct UpdateResidentialDao {
 impl From<&UpdateResidential> for UpdateResidentialDao {
     fn from(rl: &UpdateResidential) -> Self {
         UpdateResidentialDao {
+            id: rl.id,
             name: rl.name.clone(),
             address: rl.address.clone(),
             city: rl.city.clone(),
             state: rl.state.clone(),
             postal_code: rl.postal_code.clone(),
-            year_built: rl.year_built.clone(),
+            year_built: rl.year_built,
             community_type: rl.community_type.clone(),
             description: rl.description.clone(),
         }
@@ -79,6 +81,7 @@ impl UpdateResidentialDao {
     pub fn update(&self, pool: DBPool) -> Result<(), diesel::result::Error> {
         let mut conn = pool.get().unwrap();
         diesel::update(residential::table)
+            .filter(id.eq(self.id))
             .set(self)
             .execute(&mut conn)?;
         Ok(())
@@ -93,7 +96,7 @@ pub struct ResidentialDao {
     city: String,
     state: String,
     postal_code: String,
-    year_built: String,
+    year_built: i16,
     community_type: String,
     description: Option<String>,
 }
@@ -126,5 +129,11 @@ impl ResidentialDao {
                 .expect("Error loading user")?
                 .into(),
         )
+    }
+
+    pub fn find_all_residential(pool: DBPool) -> Vec<Residential> {
+        let mut conn = pool.get().unwrap();
+        let dto: Vec<ResidentialDao> = residential.load(&mut conn).expect("Error loading user");
+        dto.into_iter().map(|x| x.into()).collect()
     }
 }

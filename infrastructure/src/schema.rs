@@ -1,8 +1,6 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    use diesel::sql_types::*;
-
     residential (id) {
         id -> Integer,
         #[max_length = 255]
@@ -15,7 +13,7 @@ diesel::table! {
         state -> Varchar,
         #[max_length = 20]
         postal_code -> Varchar,
-        year_built -> Varchar,
+        year_built -> Smallint,
         #[max_length = 100]
         community_type -> Varchar,
         description -> Nullable<Text>,

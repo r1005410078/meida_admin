@@ -14,4 +14,6 @@ pub trait ResidentialRepository {
     ) -> Result<(), diesel::result::Error>;
 
     async fn get_residential_by_name(&self, name: &str) -> Option<Residential>;
+
+    async fn get_all_residential(&self) -> Vec<Residential>;
 }
