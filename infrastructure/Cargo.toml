@@ -5,3 +5,7 @@ edition = "2021"
 
 [dependencies]
 diesel = { workspace = true }
+r2d2 = { workspace = true }
+domain = { workspace = true }
+serde = { workspace = true }
+async-trait = { workspace = true }

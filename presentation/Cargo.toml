@@ -1,0 +1,15 @@
+[package]
+name = "presentation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = { workspace = true }
+infrastructure = { workspace = true }
+application = { workspace = true }
+diesel = { workspace = true }
+serde_json = { workspace = true }
+serde_with = { workspace = true }
+serde = { workspace = true }
+env_logger = { workspace = true }
+log = { workspace = true }
