@@ -7,3 +7,4 @@ edition = "2021"
 diesel = { workspace = true }
 async-trait = { workspace = true }
 serde = { workspace = true }
+chrono ={ workspace = true }
