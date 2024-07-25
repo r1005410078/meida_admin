@@ -20,7 +20,8 @@ serde_with = { version = "3.8.0", features = ["time_0_3"] }
 serde = { version = "1.0.144", features = ["derive"] }
 derive_more = "0.99.17"
 async-trait = "0.1.81"
-diesel = { version = "2.2.1", features = ["mysql", "r2d2"] }
+diesel = { version = "2.2.1", features = ["mysql", "r2d2", "chrono", "numeric"] }
+bigdecimal = { version = "0.4.5", features = ["serde"] }
 chrono = { version = "0.4.23", features = ["serde"] }
 dotenv = "0.15.0"
 r2d2 = "0.8.10"

@@ -1,0 +1,27 @@
+
+GET http://127.0.0.1:8000/api/v1/house/list HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/house/create HTTP/1.1
+content-type: application/json
+
+{
+    "neighborhood_name": "string11",
+    "house_address": "string222",
+    "house_type": "string",
+    "area": 321,
+    "bedrooms": 11,
+    "living_rooms": 32,
+    "bathrooms": 31,
+    "orientation": "string",
+    "decoration_status": "string",
+    "status": "string",
+    "house_description": "string",
+    "house_image": "string",
+    "owner_name": "string",
+    "owner_phone": "string",
+    "created_by": "string",
+    "updated_by": "string"
+}

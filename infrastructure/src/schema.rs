@@ -31,8 +31,10 @@ diesel::table! {
         created_by -> Varchar,
         #[max_length = 255]
         updated_by -> Varchar,
-        created_at -> Datetime,
-        updated_at -> Datetime,
+        #[max_length = 255]
+        deleted_by -> Nullable<Varchar>,
+        created_at -> Nullable<Timestamp>,
+        updated_at -> Nullable<Timestamp>,
     }
 }
 
@@ -56,7 +58,4 @@ diesel::table! {
     }
 }
 
-diesel::allow_tables_to_appear_in_same_query!(
-    houses,
-    residential,
-);
+diesel::allow_tables_to_appear_in_same_query!(houses, residential,);

@@ -1,2 +1,3 @@
-pub mod aggregation;
 pub mod entities;
+pub mod repositories;
+pub mod service;
